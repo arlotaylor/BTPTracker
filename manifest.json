@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Block The Pig Tracker",
+  "version": "1.0",
+  "description": "This program provides an overlay to track achievement progress in Block The Pig.",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.mathplayground.com/mobile_block_the_pig/"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
