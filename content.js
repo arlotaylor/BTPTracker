@@ -80,7 +80,6 @@ function updateIcons()
 {
     for (let i = 0; i < 8; i++)
     {
-        console.log(iconCells[i].children[0]);
         if (lastStats[i] === 0)
         {
             iconCells[i].children[0].src = "images/achievementlocked-sheet0.png";
@@ -102,7 +101,6 @@ function updateIcons()
 
 function resetGame()
 {
-    console.log("hello");
     localStorage.clear();
     sessionStorage.clear();
     window.location.reload();
@@ -155,7 +153,11 @@ setInterval(() => {
     {
         updateIcons();
 
-        if (!hasStartedTiming && lastStats[10] === 1)  // starting the timer
+        if (!willTime)
+        {
+            // timing is not needed
+        }
+        else if (!hasStartedTiming && lastStats[10] === 1)  // starting the timer
         {
             startTime = performance.now();
             hasStartedTiming = true;
